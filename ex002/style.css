@@ -15,7 +15,7 @@ body {
 
 header h1 {
     text-align: center;
-    padding: 20px;
+    padding: 27px;
     font-size: 2.5em;
     text-shadow: 1px 1px 1px black;
 }
@@ -31,6 +31,15 @@ section {
 #res {
     font-size: 5em;
     text-shadow: 1px 1px 5px white;
+    transition: color 0.3 ease;
+}
+
+.verde {
+    color: rgb(47, 255, 57);
+}
+
+.vermelho {
+    color: rgb(245, 39, 39);
 }
 
 section .botoes input{
@@ -45,12 +54,26 @@ section .botoes input{
     box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.637);
 }
 
-section .botoes input:hover {
+
+section input:hover {
     transform: scale(1.1);
 }
 
-section .botoes input:active {
+section input:active {
     transform: scale(1.0);
     box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.637);
+}
+
+input#zer {
+    border: none;
+    background-color: #3a3939;
+    color: white;
+    margin: 20px;
+    width: 150px;
+    height: 60px;
+    padding-bottom: 5px;
+    font-size: 3em;
+    border-radius: 50px;
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.637);
 }
 
