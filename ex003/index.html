@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de senha</title>
+    <script src="https://kit.fontawesome.com/ef93510103.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        Senha: <input type="password" id="senha" minlength="8"> 
+        <a href="#" id="revelar" onclick="mostrar()"><i class="fa-solid fa-eye-slash" class="trocar"></i></a>
+        <a href="#" id="revelar2" onclick="mostrar()"><i class="fa-solid fa-eye" class="trocar"></i></a>
+        <input type="button" value="Aperte" onclick="logar()">
+    </div>
+    <script>
+        let sen = document.getElementById('senha')
+        let rev = document.getElementById('revelar')
+        let re = document.getElementById('revelar2')
+
+        function logar() {
+            if (sen.value.length < 8) {
+                alert('Mínimo 8 caracteres!')
+            } else {
+                alert('Senha cadastrada com sucesso!')
+            }
+        }
+
+        function mostrar() {
+            let most = document.getElementById('senha')
+            if (most.type == 'password') {
+                most.type = "text"
+            } else {
+                most.type = "password"
+            }
+            
+            rev.classList.toggle('trocar')
+        }
+    </script>
+</body>
+</html>

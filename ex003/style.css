@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: #1f1f1f;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    position: absolute;
+    background-color: gray;
+    padding: 20px;
+    box-shadow: 2px 2px 4px white;
+    border-radius: 8px;
+}
+
+div > input {
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+div > input {
+    padding: 10px;
+}
+
+div > a#revelar {
+    position: relative;
+    color: black;
+    top: 2px;
+    left: -35px;
+
+}
+
+div > a#revelar2 {
+    position: relative;
+    color: black;
+    top: 2px;
+    left: -59px;
+    z-index: 1000;
+}
+
+.trocar {
+    visibility: hidden;
+}
+
+.trocar2 {
+    visibility: hidden;
+}
