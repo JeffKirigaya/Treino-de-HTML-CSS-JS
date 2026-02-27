@@ -39,6 +39,13 @@ nav ul li {
     border: 1px solid black;
     border-radius: 6px;
     margin: 3px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+nav ul li:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 main {
@@ -59,4 +66,25 @@ main div {
     height: 85vh;
     max-width: 1000px;
     text-align: center;
+    padding: 10px;
+}
+
+main div button {
+    width: 300px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+main div button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+main div p {
+    font-size: 1.3em;
+    font-weight: bold;
 }
