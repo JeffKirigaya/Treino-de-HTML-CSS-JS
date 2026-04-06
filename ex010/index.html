@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha D&D 5E</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Partículas de fundo -->
+  <div class="bg-runes" aria-hidden="true">
+    <span>᛫</span><span>᚛</span><span>ᚠ</span><span>ᚢ</span><span>ᚦ</span>
+    <span>ᚨ</span><span>ᚱ</span><span>ᚲ</span><span>ᚷ</span><span>ᚹ</span>
+    <span>ᚺ</span><span>ᚾ</span><span>ᛁ</span><span>ᛃ</span><span>ᛇ</span>
+    <span>ᛈ</span><span>ᛉ</span><span>ᛊ</span><span>ᛏ</span><span>ᛒ</span>
+  </div>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-emblem" aria-hidden="true">⚔</div>
+      <div class="header-text">
+        <h1 class="site-title">Grimório do Aventureiro</h1>
+        <p class="site-subtitle">Ficha de Personagem · D&amp;D 5ª Edição</p>
+      </div>
+      <div class="header-emblem" aria-hidden="true">🛡</div>
+    </header>
+
+    <!-- Toast de salvo -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span class="toast-icon">✦</span> Salvo automaticamente
+    </div>
+
+    <!-- Navegação das abas -->
+    <nav class="tabs-nav" role="tablist" aria-label="Seções da ficha">
+      <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-personagem" data-tab="personagem">
+        <span class="tab-icon">👤</span>
+        <span class="tab-label">Personagem</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-atributos"  data-tab="atributos">
+        <span class="tab-icon">🎲</span>
+        <span class="tab-label">Atributos</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-equipamentos" data-tab="equipamentos">
+        <span class="tab-icon">⚔️</span>
+        <span class="tab-label">Armas</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-observacoes" data-tab="observacoes">
+        <span class="tab-icon">📜</span>
+        <span class="tab-label">Notas</span>
+      </button>
+    </nav>
+
+    <!-- Conteúdo das abas -->
+    <main class="tabs-content">
+
+      <!-- ─── ABA 1: PERSONAGEM ─── -->
+      <section id="tab-personagem" class="tab-panel active" role="tabpanel" aria-labelledby="tab-personagem">
+        <div class="panel-inner">
+
+          <div class="section-title">
+            <span class="section-deco">✦</span> Identidade
+          </div>
+
+          <div class="field-group">
+            <div class="field">
+              <label for="nome">Nome do Personagem</label>
+              <input type="text" id="nome" name="nome" placeholder="Ex: Aldric Ironfang" maxlength="60" />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="raca">Raça</label>
+                <input type="text" id="raca" name="raca" placeholder="Ex: Meio-elfo" maxlength="40" />
+              </div>
+              <div class="field">
+                <label for="classe">Classe</label>
+                <input type="text" id="classe" name="classe" placeholder="Ex: Guerreiro" maxlength="40" />
+              </div>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <span class="section-deco">✦</span> Combate &amp; Progresso
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">❤️</div>
+              <label for="vida">Pontos de Vida</label>
+              <input type="number" id="vida" name="vida" min="0" max="9999" placeholder="0" />
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🛡️</div>
+              <label for="ca">Classe de Armadura</label>
+              <input type="number" id="ca" name="ca" min="0" max="99" placeholder="10" />
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⭐</div>
+              <label for="nivel">Nível</label>
+              <input type="number" id="nivel" name="nivel" min="1" max="20" placeholder="1" />
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">✨</div>
+              <label for="xp">Experiência (XP)</label>
+              <input type="number" id="xp" name="xp" min="0" placeholder="0" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── ABA 2: ATRIBUTOS ─── -->
+      <section id="tab-atributos" class="tab-panel" role="tabpanel" aria-labelledby="tab-atributos">
+        <div class="panel-inner">
+
+          <div class="section-title">
+            <span class="section-deco">✦</span> Atributos Primários
+          </div>
+          <p class="section-hint">Os modificadores são calculados automaticamente.</p>
+
+          <div class="attrs-grid">
+
+            <div class="attr-card" data-attr="forca">
+              <div class="attr-header">
+                <span class="attr-rune">ᚠ</span>
+                <span class="attr-name">Força</span>
+              </div>
+              <input type="number" id="forca" name="forca" min="1" max="30" placeholder="10" />
+              <div class="attr-mod" id="mod-forca">+0</div>
+              <div class="attr-label">modificador</div>
+            </div>
+
+            <div class="attr-card" data-attr="destreza">
+              <div class="attr-header">
+                <span class="attr-rune">ᚢ</span>
+                <span class="attr-name">Destreza</span>
+              </div>
+              <input type="number" id="destreza" name="destreza" min="1" max="30" placeholder="10" />
+              <div class="attr-mod" id="mod-destreza">+0</div>
+              <div class="attr-label">modificador</div>
+            </div>
+
+            <div class="attr-card" data-attr="constituicao">
+              <div class="attr-header">
+                <span class="attr-rune">ᚱ</span>
+                <span class="attr-name">Constituição</span>
+              </div>
+              <input type="number" id="constituicao" name="constituicao" min="1" max="30" placeholder="10" />
+              <div class="attr-mod" id="mod-constituicao">+0</div>
+              <div class="attr-label">modificador</div>
+            </div>
+
+            <div class="attr-card" data-attr="inteligencia">
+              <div class="attr-header">
+                <span class="attr-rune">ᛁ</span>
+                <span class="attr-name">Inteligência</span>
+              </div>
+              <input type="number" id="inteligencia" name="inteligencia" min="1" max="30" placeholder="10" />
+              <div class="attr-mod" id="mod-inteligencia">+0</div>
+              <div class="attr-label">modificador</div>
+            </div>
+
+            <div class="attr-card" data-attr="sabedoria">
+              <div class="attr-header">
+                <span class="attr-rune">ᛊ</span>
+                <span class="attr-name">Sabedoria</span>
+              </div>
+              <input type="number" id="sabedoria" name="sabedoria" min="1" max="30" placeholder="10" />
+              <div class="attr-mod" id="mod-sabedoria">+0</div>
+              <div class="attr-label">modificador</div>
+            </div>
+
+            <div class="attr-card" data-attr="carisma">
+              <div class="attr-header">
+                <span class="attr-rune">ᛏ</span>
+                <span class="attr-name">Carisma</span>
+              </div>
+              <input type="number" id="carisma" name="carisma" min="1" max="30" placeholder="10" />
+              <div class="attr-mod" id="mod-carisma">+0</div>
+              <div class="attr-label">modificador</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── ABA 3: EQUIPAMENTOS ─── -->
+      <section id="tab-equipamentos" class="tab-panel" role="tabpanel" aria-labelledby="tab-equipamentos">
+        <div class="panel-inner">
+
+          <div class="section-title">
+            <span class="section-deco">✦</span> Arsenal de Combate
+          </div>
+
+          <div id="weapons-list" class="weapons-list" aria-label="Lista de armas">
+            <!-- Armas renderizadas dinamicamente -->
+          </div>
+
+          <button class="btn btn-add" id="btn-add-weapon" type="button">
+            <span class="btn-icon">＋</span> Adicionar Arma
+          </button>
+
+          <div id="empty-weapons" class="empty-state" aria-live="polite">
+            <div class="empty-icon">⚔️</div>
+            <p>Nenhuma arma adicionada ainda.</p>
+            <p class="empty-hint">Clique em "Adicionar Arma" para começar.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── ABA 4: OBSERVAÇÕES ─── -->
+      <section id="tab-observacoes" class="tab-panel" role="tabpanel" aria-labelledby="tab-observacoes">
+        <div class="panel-inner">
+
+          <div class="section-title">
+            <span class="section-deco">✦</span> Pergaminho de Anotações
+          </div>
+          <p class="section-hint">Espaço livre para história, anotações de campanha, aliados, inimigos e segredos.</p>
+
+          <textarea
+            id="observacoes"
+            name="observacoes"
+            class="notes-area"
+            placeholder="Escreva aqui suas anotações... A história do seu personagem, itens encontrados, NPCs importantes, segredos descobertos..."
+            aria-label="Anotações livres"
+          ></textarea>
+
+          <div class="char-counter">
+            <span id="char-count">0</span> caracteres
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Rodapé com botão de reset -->
+    <footer class="site-footer">
+      <button class="btn btn-reset" id="btn-reset" type="button">
+        <span>🗑️</span> Limpar Ficha
+      </button>
+      <p class="footer-note">Dados salvos localmente no seu dispositivo</p>
+    </footer>
+
+  </div>
+
+  <!-- Modal de confirmação de reset -->
+  <div class="modal-overlay" id="modal-reset" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-icon">⚠️</div>
+      <h2 class="modal-title" id="modal-title">Limpar Ficha?</h2>
+      <p class="modal-text">Esta ação irá apagar todos os dados do personagem. Esta ação não pode ser desfeita.</p>
+      <div class="modal-actions">
+        <button class="btn btn-cancel" id="btn-cancel-reset">Cancelar</button>
+        <button class="btn btn-confirm" id="btn-confirm-reset">Sim, limpar tudo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
