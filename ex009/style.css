@@ -7,14 +7,33 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+    --cor-azul-principal: #2F6FB0;
+    --cor-azul-secundaria: #255A8C;
+    --cor-fundo-principal: #ffffff;
+    --cor-fundo-pagina: #F2F2F2;
+    --cor-texto-principal: #333333;
+    --cor-caixas: #b1b7c1;
+}
+
+body.escuro {
+    --cor-azul-principal: #ff5522;
+    --cor-azul-secundaria: #a73917;
+    --cor-fundo-principal: #222222;
+    --cor-fundo-pagina: #333333;
+    --cor-texto-principal: #ffffff;
+    --cor-caixas: #b1b7c1;
+}
+
 body {
     padding: 40px;
-    background-color: #F2F2F2;
+    background-color: var(--cor-fundo-pagina);
+    color: var(--cor-texto-principal);
 }
 
 header h1 {
-    background-color: #2F6FB0;
-    color: white;
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-fundo-principal);
     text-align: center;
     padding: 40px;
     border-radius: 8px 8px 0px 0px;
@@ -22,7 +41,7 @@ header h1 {
 }
 
 header nav {
-    background-color: white;
+    background-color: var(--cor-fundo-principal);
     padding: 20px;
     text-align: center;
     box-shadow: 0px 2px 0px rgba(128, 128, 128, 0.192);
@@ -32,7 +51,7 @@ header nav {
 
 header a {
     text-decoration: none;
-    color: #666666;
+    color: var(--cor-texto-principal);
     padding-bottom: 20px;
     margin: 20px;
     font-size: 1.3em;
@@ -40,12 +59,12 @@ header a {
 }
 
 header a:hover {
-    color: #255A8C;
-    box-shadow: 0px 2px 0px #255A8C;
+    color: var(--cor-azul-secundaria);
+    box-shadow: 0px 2px 0px var(--cor-azul-secundaria);
 }
 
 main {
-    background-color: white;
+    background-color: var(--cor-fundo-principal);
     border-radius: 0px 0px 8px 8px;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.116);
 }
@@ -76,12 +95,21 @@ main div#um p {
 
 main div#um button {
     padding: 10px;
-    background-color: #2F6FB0;
-    color: white;
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-fundo-principal);
     border: none;
     border-radius: 4px;
     font-size: 1.2em;
     width: 180px;
+}
+
+main div#um button:hover {
+    background-color: var(--cor-azul-secundaria);
+    cursor: pointer;
+}
+
+main div#um button:active {
+    transform: scale(0.98);
 }
 
 main div#dois {
@@ -104,11 +132,20 @@ main div#dois p {
 main div#dois button {
     padding: 10px;
     width: 100%;
-    color: white;
-    background-color: #2F6FB0;
+    color: var(--cor-fundo-principal);
+    background-color: var(--cor-azul-principal);
     border: none;
     font-size: 1.2em;
     border-radius: 4px;
+}
+
+main div#dois button:hover {
+    background-color: var(--cor-azul-secundaria);
+    cursor: pointer;
+}
+
+main div#dois button:active {
+    transform: scale(0.98);
 }
 
 section {
@@ -123,14 +160,15 @@ section h2 {
 
 #container {
     display: flex;
+    flex-flow: row wrap;
     gap: 20px;
 }
 
 .imagem {
-    width: 300px;
+    width: 250px;
     height: 150px;
-    background-color: #b1b7c1;
-    color: white;
+    background-color: var(--cor-caixas);
+    color: var(--cor-fundo-principal);
     font-size: 1.2em;
     font-weight: bold;
 
@@ -174,11 +212,20 @@ article input#mensagem {
 article button {
     padding: 10px;
     border: none;
-    color: white;
-    background-color: #2F6FB0;
+    color: var(--cor-fundo-principal);
+    background-color: var(--cor-azul-principal);
     border-radius: 4px;
     width: 100px;
     font-size: 1.2em;
     margin-top: 20px;
     margin-left: 101px;
+}
+
+article button:hover {
+    background-color: var(--cor-azul-secundaria);
+    cursor: pointer;
+}
+
+article button:active {
+    transform: scale(0.98);
 }
